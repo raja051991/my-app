@@ -7,9 +7,9 @@ spec:
   selector:
     app: hello
   ports:
-    - name: http
+    - name: tomcat8
       protocol: TCP
-      port: 80
+      port: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
