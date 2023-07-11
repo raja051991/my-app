@@ -29,4 +29,6 @@ spec:
         - name: project
           image: raja051991/project:latest
           imagePullPolicy: Always
+          ports:
+        - containerPort: 80
           
