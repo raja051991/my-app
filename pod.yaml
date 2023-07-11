@@ -9,7 +9,7 @@ spec:
   ports:
     - name: tomcat8
       protocol: TCP
-      port: 8080
+      port: 9090
 ---
 apiVersion: apps/v1
 kind: Deployment
