@@ -7,7 +7,7 @@ spec:
   selector:
     app: project
   ports:
-    - name: http
+    - name: project
       protocol: TCP
       port: 80
 ---
