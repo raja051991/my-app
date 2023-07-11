@@ -7,7 +7,7 @@ spec:
   selector:
     app: hello
   ports:
-    - name: tomcat
+    - name: tomcat8
       protocol: TCP
       port: 8080
 ---
