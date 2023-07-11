@@ -1,23 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: hello
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  labels:
-    app: web
+  name: loadbalancer-pod
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: web
-  replicas: 5
-  strategy:
-    type: RollingUpdate
+      app: hello
   template:
     metadata:
       labels:
-        app: web
+        app: hello 
     spec:
       containers:
-       —name: nginx
-          image: nginx
-          ports:
-           —containerPort: 80
+        - name: hello
+          image: raja051991/project:latest
+          imagePullPolicy: Always
