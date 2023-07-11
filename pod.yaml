@@ -7,9 +7,9 @@ spec:
   selector:
     app: hello
   ports:
-    - name: tomcat8
+    - name: httpd
       protocol: TCP
-      port: 9090
+      port: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,5 +27,5 @@ spec:
     spec:
       containers:
         - name: hello
-          image: project
+          image: project:latest
           imagePullPolicy: Always
